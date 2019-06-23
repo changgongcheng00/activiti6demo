@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <property name="log.dir" scan="true" scanPeriod="30 seconds"/>
+    <property name="encoding" value="UTF-8"/>
+    <property name="plain" value="%msg%n"/>
+    <property name="std" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <!-- 控制台输出 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${plain}</pattern>
+            <charset>${encoding}</charset>
+        </encoder>
+    </appender>
+    <!-- 日志输出级别 -->
+    <logger name="root">
+        <level value="ERROR"/>
+    </logger>
+    <logger name="com.example">
+        <level value="DEBUG"/>
+    </logger>
+    <root>
+        <appender-ref ref="stdout" />
+    </root>
+</configuration>
